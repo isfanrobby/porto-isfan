@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Isfan Robby Rahman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile {
+            display: flex;
+        }
+        
+        .profile img {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        .profile-details {
+            flex: 1;
+        }
+        
+        .profile-details h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .profile-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #777;
+        }
+        
+        .navbar {
+            background-color: #f3a42e;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            position: absolute; 
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+        }
+        
+        footer a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px; 
+    }
+
+    label {
+        margin-bottom: 5px; 
+    }
+
+    input[type="text"],
+    textarea {
+        width: 12%%;
+        padding: 1px;
+        margin-bottom: 10px; 
+    }
+
+    input[type="submit"] {
+        background-color: #f3a42e;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    
+    textarea {
+        width: 9%;
+        height: 33px;
+    }
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WELCOME TO MY PORTFOLIO WEB</h1>
+    </header>
+    
+    <div class="navbar">
+        <a href="#" onclick="toggleContent('home')">Home</a>
+        <a href="#" onclick="toggleContent('about')">About</a>
+        <a href="#" onclick="handleContactClick()">Contact</a>
+    </div>
+    
+    <div class="container">
+        <div id="home" class="content active">
+            <div class="profile">
+                <img src="foto/cipah-2.jpeg" alt="Foto Profil">
+                <div class="profile-details">
+                    <h2>Isfan Robby Rahman</h2>
+                    <p>Web Writer</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="about" class="content">
+            <h2>About</h2>
+            <p>Perkenalkan nama saya Isfan Robby Rahman. Saya Mahasiswa di Univesitas Komputer Indonesia. Saya adalah mahasiswa memasuki jurusan Sistem Informasi.Dengan memasuki jurusan ini saya berharap saya dapat mengikuti perkembangan teknologi dan bagian dari perkembangan itu sendiri.Saya masih mempelajari tentang HTML dan CSS. Harapan saya dengan tugas ini skill dan kreativitas saya dalam HTML dan CSS dapat berkemang dengan baik seiring waktu.   </p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleContent(contentId) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            var content = document.getElementById(contentId);
+            if (content) {
+                content.classList.add('active');
+            }
+        }
+        
+        function handleContactClick() {
+            var namaInput = document.getElementById('name');
+            if (namaInput && namaInput.value.trim() === "") {
+                alert("Please fill in your name before proceeding to the contact form.");
+                namaInput.focus();
+            } else {
+              
+                var contactSection = document.getElementById('comment-section');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    </script>
+    
+    <footer>
+        
+        <div class="contact-section" id="comment-section">
+            
+            <div class="contact-form">
+                <form action="mailto:isfan.10522017@mahasiswa.unikom.ac.id" method="post" enctype="text/plain">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="Nama" required>
+                    <br>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                    <br>
+                    <input type="submit" value="Send Feedback">
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="contact-info">
+            <p><a href="https://instagram.com/isfan.rr?igshid=ZDc4ODBmNjlmNQ==" target="_blank">
+                <img src="foto/isntagram.png" alt="Instagram" width="70" height="50">
+            </a></p>
+            <p><a href="mailto:isfan.10522017@mahasiswa.unikom.ac.id">isfan.10522017@mahasiswa.unikom.ac.id</a></p>
+        </div>
+
+        <p>&copy; 2023 Isfan Robby Rahman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
